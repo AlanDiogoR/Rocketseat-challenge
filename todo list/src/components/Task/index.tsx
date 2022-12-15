@@ -13,7 +13,7 @@ export function Task({ content, onDeletTask }:taskProps) {
   return (
     <div className={styles.tasks}>
       <div className={styles.assignment}>
-        <input type="checkbox" name="tarefaCompletada"/>
+        <input type="checkbox" name="tarefaCompletada" />
         <label>{content}</label>
         <button onClick={handleDeleteTask} title='Deletar tarefa'><img src={lixeira} alt="" /></button>
       </div>

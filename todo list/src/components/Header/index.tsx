@@ -7,7 +7,9 @@ import { Container } from '../Container';
 
 
 export function Header() {
-  const [ tasks, setTask] = useState([''])
+  const [ tasks, setTask] = useState([
+    '',
+  ])
 
   const [newTaskText, setNewTaskText] = useState('')
 
@@ -33,10 +35,6 @@ export function Header() {
       return task != taskToDelete
     })
     setTask(tasksWithoutDeleteOne)
-  }
-
-  function taskIsEmpty() {
-
   }
 
   return (
@@ -65,8 +63,14 @@ export function Header() {
       </header>
 
       <div className={styles.conatinerTask}>
-
-        
+        {tasks.map(task => {
+          return (
+            <Task 
+              content={task}
+              onDeletTask={deletTask}
+            />
+          )
+        })}
       </div>
 
     </div>
