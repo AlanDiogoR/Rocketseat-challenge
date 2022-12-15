@@ -1,6 +1,8 @@
 import './styles.module.css';
 import rocket from '../../assets/rocket-icon.png'
 import plus from '../../assets/layermore.png'
+import { ChangeEvent, FormEvent, useState } from 'react';
+
 
 export function Header() {
   return (
@@ -10,13 +12,17 @@ export function Header() {
         <label>to<strong>do</strong></label>
       </div> 
 
-      <div>
-        <input type="text" placeholder='Adcione uma nova tarefa'/>
-        <button>
+      <form action="">  
+        <input 
+          name='task'
+          type="text" 
+          placeholder='Adcione uma nova tarefa'
+        />
+        <button type='submit'>
           Criar
           <img src={plus} alt="" />
         </button>
-      </div>  
+        </form>  
     </header>
   )
 }

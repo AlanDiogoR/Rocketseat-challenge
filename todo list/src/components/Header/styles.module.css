@@ -28,7 +28,11 @@ header div > label > strong {
   color: var(--purple-dark);
 }
 
-header div > input {
+header form {
+  margin-top: 55px;
+}
+
+header form > input {
   width: calc(100vh - 10rem);
   height: 52px;
   background-color: var(--gray-500);
@@ -39,11 +43,11 @@ header div > input {
   padding: 8px;
 }
 
-header div > input::placeholder {
+header form > input::placeholder {
   padding: 8px;
 }
 
-header div > button {
+header form > button {
   background-color: var(--blue-dark);
   height: 52px;
   width: 90px;

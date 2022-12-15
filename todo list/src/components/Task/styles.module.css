@@ -20,3 +20,34 @@
 .tasks > p {
   color: var(--gray-300);
 }
+
+.tasks > input {
+  color: yellow;
+}
+
+.tasks > .assignment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+
+  width: calc(100vh - 5rem);
+  height: 52px;
+  background-color: var(--gray-500);
+  border-radius: 5px;
+}
+
+.assignment input {
+  height: 24px;
+  margin-top: 15px;
+  padding-right: 5px;
+}
+
+.assignment label {
+  margin-top: 15px;
+}
+
+.assignment button {
+  background-color: transparent;
+  border: none;
+}
