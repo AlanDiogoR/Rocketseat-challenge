@@ -5,22 +5,17 @@ import { Task } from './components/Task'
 import './global.css'
 
 
-interface taskProps {
-  task: string;
-  conclued: boolean;
-}
-export function App({ task, conclued}:taskProps) {
+export function App() {
 
   return (
     <>
       <Header/>
-      <Container/>
       {/*<div className={styles.tasks}>
         <img src={clipBoard} alt="" />
         <strong>Você ainda não tem tarefas cadastradas</strong>
         <p>Crie tarefas e organize seus itens a fazer</p>
   </div>*/}
-      <Task/>
+      
       
     </>
   )

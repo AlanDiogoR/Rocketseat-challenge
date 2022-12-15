@@ -1,13 +1,21 @@
 import styles from './styles.module.css';
 import lixeira from '../../assets/Vector.png'
 
-export function Task() {
+interface taskProps {
+  content: string
+  onDeletTask: (task: string) => void
+}
+
+export function Task({ content, onDeletTask }:taskProps) {
+  function handleDeleteTask() {
+    onDeletTask(content)
+  }
   return (
     <div className={styles.tasks}>
       <div className={styles.assignment}>
-        <input type="radio" name="tarefaCompletada"/>
-        <label>Limpar a casa</label>
-        <button><img src={lixeira} alt="" /></button>
+        <input type="checkbox" name="tarefaCompletada"/>
+        <label>{content}</label>
+        <button onClick={handleDeleteTask} title='Deletar tarefa'><img src={lixeira} alt="" /></button>
       </div>
     </div>
   )
