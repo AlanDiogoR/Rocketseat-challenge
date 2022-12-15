@@ -32,9 +32,11 @@ header div > input {
   width: calc(100vh - 10rem);
   height: 52px;
   background-color: var(--gray-500);
+  color: var(--gray-100);
   border: none;
   border-radius: 5px;
   margin-right: 6px;
+  padding: 8px;
 }
 
 header div > input::placeholder {
