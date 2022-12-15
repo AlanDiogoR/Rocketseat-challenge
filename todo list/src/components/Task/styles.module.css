@@ -1,0 +1,22 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tasks >  img {
+  height: 56px;
+  width: 56px;
+}
+
+.tasks > strong {
+  font-weight: bold;
+  color: var(--gray-300);
+}
+
+.tasks > p {
+  color: var(--gray-300);
+}

@@ -1,0 +1,32 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #333333;
+  margin: auto;
+  margin-top: 90px;
+  padding-bottom: 15px;
+  width: calc(100vh - 5rem)
+}
+
+.nav > div > a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.stron {
+  color: var(--purple);
+}
+
+.nav > div > span {
+  margin-left: 6px;
+  background-color: var(--gray-400);
+  border-radius: 50%;
+  height: 20px;
+  width: 100px;
+}

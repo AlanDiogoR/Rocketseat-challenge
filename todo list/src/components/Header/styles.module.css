@@ -1,0 +1,54 @@
+header {
+  background-color: var(--gray-700);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+}
+
+header div {
+  margin-top: 70px;
+}
+
+header div > img {
+  height: 36px;
+  width: 22px;
+}
+
+header div > label {
+  font-size: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--blue);
+  margin-left: 4px;
+}
+
+header div > label > strong {
+  color: var(--purple-dark);
+}
+
+header div > input {
+  width: calc(100vh - 10rem);
+  height: 52px;
+  background-color: var(--gray-500);
+  border: none;
+  border-radius: 5px;
+  margin-right: 6px;
+}
+
+header div > input::placeholder {
+  padding: 8px;
+}
+
+header div > button {
+  background-color: var(--blue-dark);
+  height: 52px;
+  width: 90px;
+  border: none;
+  border-radius: 5px;
+}
+
+header div > button > img {
+  margin-left: 6px;
+}
