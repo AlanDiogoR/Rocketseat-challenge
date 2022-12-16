@@ -15,7 +15,6 @@ export function Header() {
   const [ tasksCompleted, setTasksCompleted] = useState(0)
   const [ tasks, setTask] = useState<string[]>([])
   const inputElement = document.getElementById("input") as HTMLInputElement
-  const [ sla, setSla ] = useState(inputElement.checked)
 
   const [newTaskText, setNewTaskText] = useState('')
 
