@@ -1,27 +1,26 @@
-import styles from './styles.module.css';
-import lixeira from '../../assets/Vector.png'
+{/*  import styles from './styles.module.css';
+import { useState } from 'react';
+import { Container } from '../Container';
+import { ConcluedTask } from '../ConcluedTask';
 
 interface taskProps {
   content: string
+  tasks: string[]
   onDeletTask: (task: string) => void
 }
-
-export function Task({ content, onDeletTask }:taskProps) {
-  function handleDeleteTask() {
-    onDeletTask(content)
-  }
+export function Task({ content, onDeletTask, tasks }:taskProps) {
   return (
     <div className={styles.tasks}>
-      <div className={styles.assignment}>
-        <input type="checkbox" name="tarefaCompletada" />
-        <label>{content}</label>
-        <button onClick={handleDeleteTask} title='Deletar tarefa'><img src={lixeira} alt="" /></button>
-      </div>
+      <ConcluedTask
+        content={content}
+        onDeletTask={onDeletTask}
+        tasks={tasks}
+      />
     </div>
   )
 }
 
-{/*import clipBoard from '../../assets/Clipboard.png'
+import clipBoard from '../../assets/Clipboard.png'
 
 export function Task() {
   return (
