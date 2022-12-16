@@ -13,7 +13,9 @@ interface taskProps {
 
 export function Header() {
   const [ tasksCompleted, setTasksCompleted] = useState(0)
-  const [ tasks, setTask] = useState([])
+  const [ tasks, setTask] = useState<string[]>([])
+  const inputElement = document.getElementById("input") as HTMLInputElement
+  const [ sla, setSla ] = useState(inputElement.checked)
 
   const [newTaskText, setNewTaskText] = useState('')
 
@@ -41,11 +43,10 @@ export function Header() {
   }
 
   function concluedTask() {
-    if (document.getElementById("input").checked) {
-      setTasksCompleted(tasksCompleted+1)
-    } else {
-      setTasksCompleted(tasksCompleted-1)
+    if (inputElement.checked) {
+      alert(inputElement)
     }
+
   }
 
   return (
@@ -104,3 +105,6 @@ export function Header() {
     </>  
   )
 }
+
+{/*document.getElementById("input").checked
+ */}
