@@ -4,14 +4,16 @@ import plus from '../../assets/layermore.png'
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Container } from '../Container';
 import { ConcluedTask } from '../ConcluedTask';
+import { Task } from '../noTask';
 
 interface taskProps {
   tasks: string[]
   setTask: () => void
 }
+
 export function Header() {
   const [ tasksCompleted, setTasksCompleted] = useState(0)
-  const [ tasks, setTask] = useState(['madioca'])
+  const [ tasks, setTask] = useState([])
 
   const [newTaskText, setNewTaskText] = useState('')
 
@@ -38,11 +40,8 @@ export function Header() {
     setTask(tasksWithoutDeleteOne)
   }
 
-  function handleTaskConclued(event: ChangeEvent<HTMLInputElement>) {
-    console.log(event.target.value)
-  }
   function concluedTask() {
-    if (document?.getElementById("input").checked) {
+    if (document.getElementById("input").checked) {
       setTasksCompleted(tasksCompleted+1)
     } else {
       setTasksCompleted(tasksCompleted-1)
@@ -83,14 +82,20 @@ export function Header() {
         </div>
 
         <div className={styles.conatinerTask}>
+          {tasks.length === 0 && <div><Task/></div>}
           {tasks.map(task => {
             return (
-              <ConcluedTask 
-                content={task}
-                onDeletTask={deletTask}
-                tasks={tasks}
-                onHandleConcluedTask={concluedTask}
-              />
+              <div>
+                <ConcluedTask 
+                  content={task}
+                  onDeletTask={deletTask}
+                  tasks={tasks}
+                  onHandleConcluedTask={concluedTask}
+                />
+
+                
+              </div>
+        
             )
           })}
         </div>
