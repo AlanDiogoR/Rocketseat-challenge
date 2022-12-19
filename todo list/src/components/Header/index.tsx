@@ -4,12 +4,15 @@ import plus from '../../assets/layermore.png'
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { Container } from '../Container';
 import { ConcluedTask } from '../ConcluedTask';
-import { Task } from '../noTask';
+import { Task }from '../Task';
+
+
 
 interface taskProps {
   tasks: string[]
   setTask: () => void
 }
+
 
 export function Header() {
   const [ tasksCompleted, setTasksCompleted] = useState(0)
@@ -43,7 +46,9 @@ export function Header() {
 
   function concluedTask() {
     if (inputElement.checked) {
-      alert(inputElement)
+      setTasksCompleted(tasksCompleted+1)
+    } else {
+      setTasksCompleted(tasksCompleted-1)
     }
 
   }
@@ -82,7 +87,7 @@ export function Header() {
         </div>
 
         <div className={styles.conatinerTask}>
-          {tasks.length === 0 && <div><Task/></div>}
+          {tasks.length === 0 && <div><Task/> </div>}
           {tasks.map(task => {
             return (
               <div>
@@ -104,6 +109,3 @@ export function Header() {
     </>  
   )
 }
-
-{/*document.getElementById("input").checked
- */}

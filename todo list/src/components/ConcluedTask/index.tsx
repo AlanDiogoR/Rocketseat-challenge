@@ -2,6 +2,7 @@ import styles from './styles.module.css'
 import clipBoard from '../../assets/Clipboard.png'
 import lixeira from '../../assets/Vector.png'
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
 
 interface taskProps {
   content: string
@@ -26,7 +27,6 @@ export function ConcluedTask({ content, onDeletTask, tasks, onHandleConcluedTask
         <input 
           type="checkbox" 
           onChange={handleConcluedTask}
-          id='input'
         />
         <label>{content}</label>
         <button onClick={handleDeleteTask} title='Deletar tarefa'><img src={lixeira} alt="" /></button>
