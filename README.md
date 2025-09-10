@@ -18,8 +18,7 @@ Aqui estão incluídos projetos dos programas **Discover, Ignite, NLW** e outros
 Rocketseat-Challenge/  
 │── discover/   → Projetos do Discover (base do front-end e back-end)  
 │── ignite/     → Projetos avançados (Node.js, React, React Native)  
-│── nlw/        → Projetos construídos durante as edições do NLW  
-│── extras/     → Mini projetos e desafios avulsos  
+
 
 ---
 
@@ -45,7 +44,6 @@ Durante os desafios, foram utilizadas as principais stacks modernas de desenvolv
 ![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 
 ### 🗄️ Bancos de Dados  
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
