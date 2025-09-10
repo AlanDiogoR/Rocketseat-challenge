@@ -1,7 +1,7 @@
 # 🚀 Rocketseat Challenges  
 
 <p align="center">
-  <img src="https://rocketseat.com.br/_next/image?url=%2Fassets%2Flogos%2Frocketseat.svg&w=256&q=75" alt="Rocketseat Logo" height="100"/>
+  <img src="rocketseat" alt="Rocketseat Logo" height="100"/>
 </p>
 
 ---
