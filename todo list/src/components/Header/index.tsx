@@ -17,7 +17,6 @@ interface taskProps {
 export function Header() {
   const [ tasksCompleted, setTasksCompleted] = useState(0)
   const [ tasks, setTask] = useState<string[]>([])
-  const inputElement = document.getElementById("input") as HTMLInputElement
 
   const [newTaskText, setNewTaskText] = useState('')
 
@@ -44,8 +43,8 @@ export function Header() {
     setTask(tasksWithoutDeleteOne)
   }
 
-  function concluedTask() {
-    if (inputElement.checked) {
+  function concluedTask(checked: boolean) {
+    if (checked) {
       setTasksCompleted(tasksCompleted+1)
     } else {
       setTasksCompleted(tasksCompleted-1)
@@ -90,7 +89,7 @@ export function Header() {
           {tasks.length === 0 && <div><Task/> </div>}
           {tasks.map(task => {
             return (
-              <div>
+              <div key={task}>
                 <ConcluedTask 
                   content={task}
                   onDeletTask={deletTask}
