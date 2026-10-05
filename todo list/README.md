@@ -6,7 +6,7 @@ Projeto Vite + React + TypeScript (SPA estática). Guia para rodar em Linux (ex.
 
 ## Requisitos
 
-- Node.js **20 LTS** (ou 22 LTS) e npm 9+ — `node -v`
+- Node.js **20 LTS ou 22 LTS** (validado em 20.19) e npm 9+ — `node -v`
 - Para servir com nginx (opcional): `sudo apt install nginx`
 
 ## Passo a passo
@@ -53,4 +53,4 @@ server {
 
 Depois: `sudo nginx -t && sudo systemctl reload nginx`.
 
-> Para servir na mesma porta 80 junto de outro projeto, faça o build com `BASE=/todo/ npm run build` e use `location /todo/ { alias /var/www/atv-redes/todo-list/; try_files $uri $uri/ /todo/index.html; }`.
+> Para servir na mesma porta 80 junto de outro projeto, faça o build com `BASE=/todo/ npm run build`, copie o `dist/` para `/var/www/atv-redes/todo/` e use `location /todo/ { root /var/www/atv-redes; try_files $uri $uri/ /todo/index.html; }`.
