@@ -1,14 +1,14 @@
 import styles from './styles.module.css'
 import clipBoard from '../../assets/Clipboard.png'
 import lixeira from '../../assets/Vector.png'
-import { useState } from 'react'
+import { ChangeEvent } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
 interface taskProps {
   content: string
   tasks: string[]
   onDeletTask: (task: string) => void
-  onHandleConcluedTask: () => void
+  onHandleConcluedTask: (checked: boolean) => void
 }
 
 export function ConcluedTask({ content, onDeletTask, tasks, onHandleConcluedTask }:taskProps) {
@@ -16,9 +16,9 @@ export function ConcluedTask({ content, onDeletTask, tasks, onHandleConcluedTask
     onDeletTask(content)
   }
 
-  function handleConcluedTask() {
-    onHandleConcluedTask()
-  } 
+  function handleConcluedTask(event: ChangeEvent<HTMLInputElement>) {
+    onHandleConcluedTask(event.target.checked)
+  }
 
 
   return (
