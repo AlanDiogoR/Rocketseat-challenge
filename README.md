@@ -1,74 +1,57 @@
-# 🚀 Rocketseat Challenges  
+# Desafios Rocketseat (Ignite)
 
 <p align="center">
-  <img src="rockseat.svg" alt="Rocketseat Logo" height="100"/>
+  <img src="rockseat.svg" alt="Logo Rocketseat" height="100"/>
 </p>
 
----
+Desafios de front-end propostos na trilha **Ignite** da Rocketseat, feitos com **React + TypeScript + Vite**. Cada desafio fica em uma pasta própria, com seu `package.json`.
 
-## 📖 Sobre o Repositório  
+## Projetos
 
-Este repositório reúne os **desafios, exercícios e projetos práticos** desenvolvidos durante minha jornada de aprendizado na **Rocketseat**.  
-Aqui estão incluídos projetos dos programas **Discover, Ignite, NLW** e outros bootcamps, sempre com foco em **aprender na prática** e aplicar conceitos de **desenvolvimento moderno**.  
+| Projeto | Pasta | Stack | Status |
+|---|---|---|---|
+| **Todo List** | [`todo list/`](todo%20list/) | React 18, TypeScript, Vite 4, CSS Modules, uuid | Concluído |
+| **Coffee Delivery** | [`Coffe Delivery/`](Coffe%20Delivery/) | React 18, TypeScript, Vite 4, styled-components, Phosphor Icons | Em andamento (só o header) |
 
----
+### Todo List
 
-## 📂 Estrutura  
+Lista de tarefas em React com estado em memória (as tarefas somem ao recarregar a página).
 
-Rocketseat-Challenge/  
-│── discover/   → Projetos do Discover (base do front-end e back-end)  
-│── ignite/     → Projetos avançados (Node.js, React, React Native)  
+- Criação de tarefas com validação de campo obrigatório (o botão "Criar" fica desabilitado com o campo vazio)
+- Marcar e desmarcar tarefas como concluídas
+- Exclusão de tarefas
+- Contadores de tarefas criadas e concluídas
+- Estado vazio quando não há tarefas
+- Estilos isolados com CSS Modules
 
+Configuração de servidor pronta para VM Linux: o Vite escuta em `0.0.0.0` com `strictPort`, e host, portas e caminho base vêm das variáveis `HOST`, `PORT`, `PREVIEW_PORT` e `BASE`. Detalhes e exemplo de nginx no [README do projeto](todo%20list/README.md).
 
----
+### Coffee Delivery
 
-## 🛠️ Tecnologias Utilizadas  
+Início do desafio de e-commerce de cafés: por enquanto tem o tema global com styled-components e o header com logo, localização e ícone do carrinho.
 
-Durante os desafios, foram utilizadas as principais stacks modernas de desenvolvimento:  
+## Como rodar
 
-### 🌱 Linguagens  
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+Requisitos: Node.js 20 LTS (ou 22) e npm.
 
-### 🎨 Front-end  
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+```bash
+# Todo List
+cd "todo list"
+npm ci
+npm run dev        # http://localhost:5174
+npm run build      # tsc + vite build → dist/
+npm run preview    # serve o build em http://localhost:4174
+```
 
-### ⚙️ Back-end  
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+```bash
+# Coffee Delivery
+cd "Coffe Delivery"
+npm ci
+npm run dev        # porta padrão do Vite (5173)
+```
 
-### 📱 Mobile  
-![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+Nenhum dos projetos precisa de variáveis de ambiente obrigatórias.
 
-### 🗄️ Bancos de Dados  
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+## Licença
 
----
-
-## 📘 Projetos em Destaque  
-
-- **Discover:**  
-  - Landing Pages responsivas com HTML e CSS  
-  - Introdução ao JavaScript e manipulação do DOM  
-  - Projeto de controle de finanças  
-
-- **Ignite:**  
-  - API com Node.js e Express  
-  - Projeto em React com autenticação JWT  
-  - Mobile app com React Native e integração com APIs  
-
-- **NLW:**  
-  - Aplicações completas criadas em tempo recorde durante as semanas de imersão (front, back e mobile).  
-
----
-
-## ▶️ Como Executar  
-
-1. Clone o repositório:  
-   ```bash
-   git clone https://github.com/AlanDiogoR/Rocketseat-challenge.git
-   cd Rocketseat-challenge
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
