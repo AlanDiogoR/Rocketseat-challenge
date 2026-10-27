@@ -1,34 +1,33 @@
 import styles from './styles.module.css'
-import clipBoard from '../../assets/Clipboard.png'
 import lixeira from '../../assets/Vector.png'
 import { ChangeEvent } from 'react'
-import { v4 as uuidv4 } from 'uuid';
+import { TaskItem } from '../../lib/tasks'
 
 interface taskProps {
-  content: string
-  tasks: string[]
-  onDeletTask: (task: string) => void
-  onHandleConcluedTask: (checked: boolean) => void
+  task: TaskItem
+  onDeletTask: (id: string) => void
+  onHandleConcluedTask: (id: string, checked: boolean) => void
 }
 
-export function ConcluedTask({ content, onDeletTask, tasks, onHandleConcluedTask }:taskProps) {
+export function ConcluedTask({ task, onDeletTask, onHandleConcluedTask }:taskProps) {
   function handleDeleteTask() {
-    onDeletTask(content)
+    onDeletTask(task.id)
   }
 
   function handleConcluedTask(event: ChangeEvent<HTMLInputElement>) {
-    onHandleConcluedTask(event.target.checked)
+    onHandleConcluedTask(task.id, event.target.checked)
   }
-
 
   return (
     <div className={styles.tasks}>
       <div className={styles.assignment}>
         <input 
           type="checkbox" 
+          id={`task-${task.id}`}
+          checked={task.done}
           onChange={handleConcluedTask}
         />
-        <label>{content}</label>
+        <label htmlFor={`task-${task.id}`}>{task.title}</label>
         <button onClick={handleDeleteTask} title='Deletar tarefa'><img src={lixeira} alt="" /></button>
       </div>
     </div>

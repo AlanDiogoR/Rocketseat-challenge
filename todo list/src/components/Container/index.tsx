@@ -1,7 +1,8 @@
 import styles from './styles.module.css'
+import { TaskItem } from '../../lib/tasks'
 
 interface TaskProps {
-  tasks: string[]
+  tasks: TaskItem[]
   conclued: number
 }
 
