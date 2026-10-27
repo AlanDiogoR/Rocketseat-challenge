@@ -5,25 +5,20 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { Container } from '../Container';
 import { ConcluedTask } from '../ConcluedTask';
 import { Task }from '../Task';
+import { TaskItem, addTask, countDone, removeTask, toggleTask } from '../../lib/tasks';
 
-
-
-interface taskProps {
-  tasks: string[]
-  setTask: () => void
-}
 
 
 export function Header() {
-  const [ tasksCompleted, setTasksCompleted] = useState(0)
-  const [ tasks, setTask] = useState<string[]>([])
+  const [ tasks, setTask] = useState<TaskItem[]>([])
+  const tasksCompleted = countDone(tasks)
 
   const [newTaskText, setNewTaskText] = useState('')
 
   function handleCreateTask(event: FormEvent) {
     event.preventDefault()
 
-    setTask([...tasks, newTaskText])
+    setTask(addTask(tasks, newTaskText))
     setNewTaskText('')
   }
 
@@ -36,20 +31,12 @@ export function Header() {
     event.target.setCustomValidity('');
   }
 
-  function deletTask(taskToDelete: string) {
-    const tasksWithoutDeleteOne = tasks.filter(task => {
-      return task != taskToDelete
-    })
-    setTask(tasksWithoutDeleteOne)
+  function deletTask(id: string) {
+    setTask(removeTask(tasks, id))
   }
 
-  function concluedTask(checked: boolean) {
-    if (checked) {
-      setTasksCompleted(tasksCompleted+1)
-    } else {
-      setTasksCompleted(tasksCompleted-1)
-    }
-
+  function concluedTask(id: string, checked: boolean) {
+    setTask(toggleTask(tasks, id, checked))
   }
 
   return (
@@ -89,11 +76,10 @@ export function Header() {
           {tasks.length === 0 && <div><Task/> </div>}
           {tasks.map(task => {
             return (
-              <div key={task}>
+              <div key={task.id}>
                 <ConcluedTask 
-                  content={task}
+                  task={task}
                   onDeletTask={deletTask}
-                  tasks={tasks}
                   onHandleConcluedTask={concluedTask}
                 />
 
