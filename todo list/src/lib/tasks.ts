@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 export interface TaskItem {
   id: string
   title: string
@@ -5,7 +7,7 @@ export interface TaskItem {
 }
 
 export function createTask(title: string): TaskItem {
-  return { id: crypto.randomUUID(), title, done: false }
+  return { id: uuidv4(), title, done: false }
 }
 
 export function addTask(tasks: TaskItem[], title: string): TaskItem[] {

@@ -23,10 +23,11 @@ export function ConcluedTask({ task, onDeletTask, onHandleConcluedTask }:taskPro
       <div className={styles.assignment}>
         <input 
           type="checkbox" 
+          id={`task-${task.id}`}
           checked={task.done}
           onChange={handleConcluedTask}
         />
-        <label>{task.title}</label>
+        <label htmlFor={`task-${task.id}`}>{task.title}</label>
         <button onClick={handleDeleteTask} title='Deletar tarefa'><img src={lixeira} alt="" /></button>
       </div>
     </div>
